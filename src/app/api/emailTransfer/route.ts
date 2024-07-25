@@ -4,7 +4,6 @@ import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
   const { emailContact, fullName, text, fromDate, toDate, transferInfo, flightNumber, phone } = await request.json();
-  const message = `${fullName} wants to get a transfer ${transferInfo},  arriving ${fromDate} to ${toDate} i will arrive in flight: ${flightNumber}. My Phone ${phone} and my email is ${emailContact}. ${text}`;
   const htmlMessage = `
   <h2>Transfer Request Details</h2>
   <ul>

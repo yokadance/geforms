@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "nombre": "Sunset Beach",
+    "direccion": "Rambla Williman Parada 3, Punta del Este",
+    "imagen": "/imagenes/hoteles/sunset.jpeg",
+    "amenities": ["Piscina", "Desayuno", "WiFi", "Bar 24hrs"]
+  },
+  {
+    "id": 2,
+    "nombre": "Hotel Enjoy",
+    "direccion": "Parada 4, Playa Mansa, Punta del Este",
+    "imagen": "/imagenes/hoteles/enjoy.jpg",
+    "amenities": ["Piscinas", "Desayuno", "Estacionamiento", "Spa"]
+  },
+  {
+    "id": 3,
+    "nombre": "Hotel Solerios",
+    "direccion": "Fermentario y Biarritz, Punta del Este",
+    "imagen": "/imagenes/hoteles/lacapilla.jpg",
+    "amenities": ["Piscina", "Desayuno", "Estacionamiento", "Spa"]
+  }
+  
+]

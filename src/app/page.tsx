@@ -4,7 +4,7 @@ import Head from 'next/head';
 import * as React from 'react';
 import '@/lib/env';
 
-import Hero from '@/components/header/Header';
+import Hero from '@/components/header/HeaderTraslados';
 
 import Home from './transfer/page';
 

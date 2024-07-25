@@ -1,8 +1,8 @@
-import { FormData } from '@/app/components/hotelContact';
+import { FormDataHotel } from "@/app/components/hotelForm";
 
 
-export function sendEmail(data: FormData) {
-  const apiEndpoint = '/api/email';
+export function sendEmailHotel(data: FormDataHotel) {
+  const apiEndpoint = '/api/emailHotel';
 
   fetch(apiEndpoint, {
     method: 'POST',
