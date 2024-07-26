@@ -87,28 +87,28 @@ const HotelFormEn: FC = () => {
             {...register('hotel', { required: true })}
           >
             <option value=''>Seleccione una habitación</option>
-            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE US$125'>
               HOTEL ENJOY HABITACION SUPERIOR SINGLE US$185
             </option>
-            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+            <option value='ENJOY HOTEL SUPERIOR ROOM DOUBLE US$125'>
               HOTEL ENJOY HABITACION SUPERIOR DOUBLE US$185
             </option>
-            <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+            <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE US$125'>
               HOTEL SOLERIOS HABITACION SUPERIOR SINGLE US$125
             </option>
-            <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+            <option value='SOLERIOS HOTEL SUPERIOR ROOM DOUBLE US$125'>
               HOTEL SOLERIOS HABITACION SUPERIOR DOUBLE US$125
             </option>
-            <option value='SOLERIOS HOTEL DELUXE ROOM SINGLE/DOUBLE US$140'>
+            <option value='SOLERIOS HOTEL DELUXE ROOM SINGLE US$140'>
               HOTEL SOLERIOS HABITACION DELUXE SINGLE US$140
             </option>
-            <option value='SOLERIOS HOTEL DELUXE ROOM SINGLE/DOUBLE US$140'>
+            <option value='SOLERIOS HOTEL DELUXE ROOM DOUBLE US$140'>
               HOTEL SOLERIOS HABITACION DELUXE DOUBLE US$140
             </option>
-            <option value='SUNSET BEACH HOTEL STANDARD ROOM SINGLE/DOUBLE US$80'>
+            <option value='SUNSET BEACH HOTEL STANDARD ROOM SINGLE US$80'>
               HOTEL SUNSET BEACH HABITACION STANDARD SINGLE US$80
             </option>
-            <option value='SUNSET BEACH HOTEL STANDARD ROOM SINGLE/DOUBLE US$80'>
+            <option value='SUNSET BEACH HOTEL STANDARD ROOM DOUBLE US$80'>
               HOTEL SUNSET BEACH HABITACION STANDARD DOUBLE US$80
             </option>
           </select>
