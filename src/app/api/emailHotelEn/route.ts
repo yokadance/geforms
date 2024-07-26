@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
 
   const mailOptions: Mail.Options = {
     from: 'Contacto', //process.env.MY_EMAIL,
-    to: process.env.MY_EMAIL,
+    to: 'receptivos@grupoelis.com.uy',
     cc: emailContact,
     subject: `Message from ${fullName} - Hotel Reservation Contact`,
     //text: message,

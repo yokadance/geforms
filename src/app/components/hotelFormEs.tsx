@@ -43,7 +43,7 @@ const HotelFormEn: FC = () => {
           </label>
           <input
             type='text'
-            placeholder='Full Name'
+            placeholder='Nombre Completo'
             className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
             {...register('fullName', { required: true })}
           />
@@ -57,7 +57,7 @@ const HotelFormEn: FC = () => {
           </label>
           <input
             type='text'
-            placeholder='Phone Number'
+            placeholder='Teléfono de contacto'
             className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
             {...register('phone', { required: true })}
           />
@@ -151,7 +151,7 @@ const HotelFormEn: FC = () => {
             Mensaje
           </label>
           <textarea
-            placeholder='Message'
+            placeholder='Mensaje'
             className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-red-900 outline-none focus:border-red-700 focus:shadow-md'
             {...register('text', { required: true })}
           />
