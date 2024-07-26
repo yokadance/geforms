@@ -103,7 +103,7 @@ const TransferContactEn: FC = () => {
               htmlFor='fromDate'
               className='text-left mb-2 block text-base font-large text-red-950'
             >
-              Arrive Date
+              Arrival Date
             </label>
             <input
               type='date'

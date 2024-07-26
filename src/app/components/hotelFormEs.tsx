@@ -12,7 +12,6 @@ export type FormDataHotelEs = {
   hotel: string;
   fromDate: string;
   toDate: string;
-  flightNumber: string;
   text: string;
 };
 
@@ -89,16 +88,28 @@ const HotelFormEn: FC = () => {
           >
             <option value=''>Seleccione una habitación</option>
             <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
-              HOTEL ENJOY HABITACION SUPERIOR SINGLE/DOUBLE US$185
+              HOTEL ENJOY HABITACION SUPERIOR SINGLE US$185
+            </option>
+            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+              HOTEL ENJOY HABITACION SUPERIOR DOUBLE US$185
             </option>
             <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
-              HOTEL SOLERIOS HABITACION SUPERIOR SINGLE/DOUBLE US$125
+              HOTEL SOLERIOS HABITACION SUPERIOR SINGLE US$125
+            </option>
+            <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+              HOTEL SOLERIOS HABITACION SUPERIOR DOUBLE US$125
             </option>
             <option value='SOLERIOS HOTEL DELUXE ROOM SINGLE/DOUBLE US$140'>
-              HOTEL SOLERIOS HABITACION DELUXE SINGLE/DOUBLE US$140
+              HOTEL SOLERIOS HABITACION DELUXE SINGLE US$140
+            </option>
+            <option value='SOLERIOS HOTEL DELUXE ROOM SINGLE/DOUBLE US$140'>
+              HOTEL SOLERIOS HABITACION DELUXE DOUBLE US$140
             </option>
             <option value='SUNSET BEACH HOTEL STANDARD ROOM SINGLE/DOUBLE US$80'>
-              HOTEL SUNSET BEACH HABITACION STANDARD SINGLE/DOUBLE US$80
+              HOTEL SUNSET BEACH HABITACION STANDARD SINGLE US$80
+            </option>
+            <option value='SUNSET BEACH HOTEL STANDARD ROOM SINGLE/DOUBLE US$80'>
+              HOTEL SUNSET BEACH HABITACION STANDARD DOUBLE US$80
             </option>
           </select>
         </div>
@@ -107,7 +118,7 @@ const HotelFormEn: FC = () => {
             htmlFor='fromDate'
             className='text-left mb-2 block text-base font-large text-red-900'
           >
-            Desde
+            Check In
           </label>
           <input
             type='date'
@@ -120,7 +131,7 @@ const HotelFormEn: FC = () => {
             htmlFor='toDate'
             className='text-left mb-2 block text-base font-large text-red-900'
           >
-            Hasta
+            Check Out
           </label>
           <input
             type='date'
@@ -128,21 +139,7 @@ const HotelFormEn: FC = () => {
             {...register('toDate', { required: true })}
           />
         </div>
-        <div className='mb-5'>
-          <label
-            htmlFor='flightNumber'
-            className='text-left mb-2 block text-base font-large text-red-900'
-          >
-            Número de vuelo
-            <p className='text-xs'>En caso que usted arrive en un vuelo</p>
-          </label>
-          <input
-            type='text'
-            placeholder='Flight Number'
-            className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-red-900 outline-none focus:border-red-700 focus:shadow-md'
-            {...register('flightNumber', { required: false })}
-          />
-        </div>
+
         <div className='mb-5'>
           <label
             htmlFor='text'
