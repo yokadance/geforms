@@ -3,7 +3,7 @@
 import Head from 'next/head';
 import * as React from 'react';
 
-import HotelContact from '@/app/components/hotelForm';
+import HotelFormEn from '@/app/components/hotelFormEn';
 
 export default function Transfers() {
   return (
@@ -13,7 +13,7 @@ export default function Transfers() {
       </Head>
       <section className='bg-white'>
         <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-          <HotelContact />
+          <HotelFormEn />
         </div>
       </section>
     </main>

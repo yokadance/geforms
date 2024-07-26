@@ -3,6 +3,10 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
+  i18n: {
+    locales: ['en', 'es'], // Add your supported locales
+    defaultLocale: 'en', // Set the default locale
+  },
 
   reactStrictMode: true,
   swcMinify: true,

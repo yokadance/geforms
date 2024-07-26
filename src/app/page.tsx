@@ -6,7 +6,7 @@ import '@/lib/env';
 
 import Hero from '@/components/header/HeaderTraslados';
 
-import Home from './transfer/page';
+import Home from './transfer-en/page';
 
 export default function HomePage() {
   return (

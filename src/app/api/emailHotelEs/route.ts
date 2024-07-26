@@ -3,22 +3,30 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { emailContact, fullName, text, fromDate, toDate, hotel, flightNumber, phone } = await request.json();
+  const {
+    emailContact,
+    fullName,
+    text,
+    fromDate,
+    toDate,
+    hotel,
+    flightNumber,
+    phone,
+  } = await request.json();
   const htmlMessage = `
   <h2>Acomodation Request Details</h2>
   <ul>
-    <li><strong>Full Name:</strong> ${fullName}</li>
+    <li><strong>Nombre Completo:</strong> ${fullName}</li>
     <li><strong>Hotel/Accomodation:</strong> ${hotel}</li>
-    <li><strong>Arrival Date:</strong> ${fromDate}</li>
-    <li><strong>Departure Date:</strong> ${toDate}</li>
-    <li><strong>Flight Number:</strong> ${flightNumber}</li>
-    <li><strong>Phone:</strong> ${phone}</li>
+    <li><strong>Fecha de arrivo:</strong> ${fromDate}</li>
+    <li><strong>Fecha de partida:</strong> ${toDate}</li>
+    <li><strong>Numero de vuelo:</strong> ${flightNumber}</li>
+    <li><strong>Teléfono de contacto:</strong> ${phone}</li>
     <li><strong>Email:</strong> ${emailContact}</li>
-    <li><strong>Additional Notes:</strong> ${text}</li>
+    <li><strong>Notas adicionales:</strong> ${text}</li>
   </ul>
 `;
-  
-  
+
   const transport = nodemailer.createTransport({
     service: 'gmail',
     /* 
@@ -39,14 +47,13 @@ export async function POST(request: NextRequest) {
   });
 
   const mailOptions: Mail.Options = {
-    from: "Contacto", //process.env.MY_EMAIL,
+    from: 'Contacto', //process.env.MY_EMAIL,
     to: process.env.MY_EMAIL,
     cc: emailContact,
-    subject: `Message from ${fullName} - Hotel Reservation Contact`,
+    subject: `Mensaje de  ${fullName} - Contacto por reserva de hotel`,
     //text: message,
     html: htmlMessage,
-    replyTo: emailContact
-    
+    replyTo: emailContact,
   };
 
   const sendMailPromise = () =>
@@ -62,7 +69,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent' });
+    return NextResponse.json({ message: 'Mensaje enviado' });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }

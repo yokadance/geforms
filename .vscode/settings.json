@@ -14,9 +14,6 @@
     "containerClassName"
   ],
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "cSpell.words": [
-    "Emailtransfer",
-    "Hoteles",
-    "nombre"
-  ]
+  "cSpell.words": ["Emailtransfer", "Hoteles", "nombre"],
+  "i18n-ally.localesPaths": ["src/locales"]
 }
