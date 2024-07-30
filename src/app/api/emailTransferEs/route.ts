@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
     transferInfo,
     flightNumber,
     phone,
+    metodoPago,
   } = await request.json();
   const htmlMessage = `
   <h2>Detalles del traslado</h2>
@@ -22,7 +23,10 @@ export async function POST(request: NextRequest) {
     <li><strong>Fecha de partida:</strong> ${toDate}</li>
     <li><strong>Numero de vuelo:</strong> ${flightNumber}</li>
     <li><strong>Teléfono de contacto:</strong> ${phone}</li>
+        <li><strong>Abonará con :</strong> ${metodoPago}</li>
+
     <li><strong>Email:</strong> ${emailContact}</li>
+    
     <li><strong>Notas adicionales:</strong> ${text}</li>
   </ul>
 `;
@@ -69,7 +73,10 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Mensaje enviado' });
+    return NextResponse.json({
+      message:
+        'Mensaje enviado. A la brevedad será contactado por nuestros agentes. Recuerde que el costo es por persona',
+    });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }

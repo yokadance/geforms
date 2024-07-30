@@ -13,6 +13,7 @@ export type FormDataHotel = {
   fromDate: string;
   toDate: string;
   text: string;
+  metodoPago: string;
 };
 
 const HotelFormEn: FC = () => {

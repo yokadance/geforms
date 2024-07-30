@@ -3,8 +3,16 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { emailContact, fullName, text, fromDate, toDate, hotel, phone } =
-    await request.json();
+  const {
+    emailContact,
+    fullName,
+    text,
+    fromDate,
+    toDate,
+    hotel,
+    phone,
+    metodoPago,
+  } = await request.json();
   const htmlMessage = `
   <h2>Acomodation Request Details</h2>
   <ul>
@@ -14,6 +22,7 @@ export async function POST(request: NextRequest) {
     <li><strong>Fecha de partida:</strong> ${toDate}</li>
     <li><strong>Teléfono de contacto:</strong> ${phone}</li>
     <li><strong>Email:</strong> ${emailContact}</li>
+        <li><strong>Abonará con :</strong> ${metodoPago}</li>
     <li><strong>Notas adicionales:</strong> ${text}</li>
   </ul>
 `;
@@ -60,7 +69,10 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Mensaje enviado' });
+    return NextResponse.json({
+      message:
+        'Mensaje enviado. A la brevedad será contactado por nuestros agentes. Recuerde que el costo es por noche y por persona.',
+    });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }

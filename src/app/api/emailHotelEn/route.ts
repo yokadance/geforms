@@ -3,8 +3,16 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
 export async function POST(request: NextRequest) {
-  const { emailContact, fullName, text, fromDate, toDate, hotel, phone } =
-    await request.json();
+  const {
+    emailContact,
+    fullName,
+    text,
+    fromDate,
+    toDate,
+    hotel,
+    phone,
+    metodPago,
+  } = await request.json();
   const htmlMessage = `
   <h2>Acomodation Request Details</h2>
   <ul>
@@ -14,6 +22,7 @@ export async function POST(request: NextRequest) {
     <li><strong>Departure Date:</strong> ${toDate}</li>
     <li><strong>Phone:</strong> ${phone}</li>
     <li><strong>Email:</strong> ${emailContact}</li>
+    <li><strong>Abonará con :</strong> ${metodPago}</li>
     <li><strong>Additional Notes:</strong> ${text}</li>
   </ul>
 `;

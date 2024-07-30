@@ -13,6 +13,7 @@ export type FormDataHotelEs = {
   fromDate: string;
   toDate: string;
   text: string;
+  metodoPago: string;
 };
 
 const HotelFormEn: FC = () => {
@@ -139,7 +140,25 @@ const HotelFormEn: FC = () => {
             {...register('toDate', { required: true })}
           />
         </div>
-
+        <div className='mb-5'>
+          <label
+            htmlFor='hotel'
+            className='mb-2 text-left block text-base font-large text-red-900'
+          >
+            Seleccione como pagará su reserva
+          </label>
+          <select
+            className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
+            {...register('metodoPago', { required: true })}
+          >
+            <option value=''>Seleccione método de pago</option>
+            <option value='Tarjeta de crédito'>Tarjeta de crédito</option>
+            <option value='Transferencia bancaria'>
+              Transferencia bancaria
+            </option>
+            <option value='PayPal'>PayPal</option>
+          </select>
+        </div>
         <div className='mb-5'>
           <label
             htmlFor='text'
