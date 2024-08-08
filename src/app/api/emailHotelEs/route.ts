@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     await sendMailPromise();
     return NextResponse.json({
       message:
-        'Mensaje enviado. A la brevedad será contactado por nuestros agentes. Recuerde que el costo es por noche y por persona.',
+        'Mensaje enviado. A la brevedad será contactado por nuestros agentes. Recuerde que el costo es por noche.',
     });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });

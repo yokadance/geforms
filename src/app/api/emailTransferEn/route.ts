@@ -69,7 +69,10 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent' });
+    return NextResponse.json({
+      message:
+        'Email sent. One of our sales representatives will contact you shortly. Please remember tht the cost is per person',
+    });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }

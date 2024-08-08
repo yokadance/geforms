@@ -88,10 +88,10 @@ const HotelFormEn: FC = () => {
             {...register('hotel', { required: true })}
           >
             <option value=''>Seleccione una habitación</option>
-            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE US$125'>
+            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE US$185'>
               HOTEL ENJOY HABITACION SUPERIOR SINGLE US$185
             </option>
-            <option value='ENJOY HOTEL SUPERIOR ROOM DOUBLE US$125'>
+            <option value='ENJOY HOTEL SUPERIOR ROOM DOUBLE US$185'>
               HOTEL ENJOY HABITACION SUPERIOR DOUBLE US$185
             </option>
             <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE US$125'>

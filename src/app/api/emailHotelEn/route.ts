@@ -69,7 +69,10 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent' });
+    return NextResponse.json({
+      message:
+        '"One of our sales representatives will contact you shortly. Please remember that the cost of the hotels is per night. ',
+    });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }
