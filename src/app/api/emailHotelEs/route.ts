@@ -12,19 +12,22 @@ export async function POST(request: NextRequest) {
     hotel,
     phone,
     metodoPago,
+    pais,
   } = await request.json();
   const htmlMessage = `
   <h2>Acomodation Request Details</h2>
   <ul>
     <li><strong>Nombre Completo:</strong> ${fullName}</li>
     <li><strong>Hotel/Accomodation:</strong> ${hotel}</li>
-    <li><strong>Fecha de arrivo:</strong> ${fromDate}</li>
+    <li><strong>Fecha de arribo:</strong> ${fromDate}</li>
     <li><strong>Fecha de partida:</strong> ${toDate}</li>
     <li><strong>Teléfono de contacto:</strong> ${phone}</li>
     <li><strong>Email:</strong> ${emailContact}</li>
         <li><strong>Abonará con :</strong> ${metodoPago}</li>
+   <li><strong>País con :</strong> ${pais}</li>
     <li><strong>Notas adicionales:</strong> ${text}</li>
   </ul>
+  Estimado/a. Hemos recibido tu mensaje. En breve un agente de ventas estará en contacto con usted.
 `;
 
   const transport = nodemailer.createTransport({
@@ -50,7 +53,7 @@ export async function POST(request: NextRequest) {
     from: 'Contacto', //process.env.MY_EMAIL,
     to: 'receptivos@grupoelis.com.uy',
     cc: emailContact,
-    subject: `Mensaje de  ${fullName} - Contacto por reserva de hotel`,
+    subject: `[SUMMIT ENERGY] - Mensaje de  ${fullName} - Contacto por reserva de hotel `,
     //text: message,
     html: htmlMessage,
     replyTo: emailContact,

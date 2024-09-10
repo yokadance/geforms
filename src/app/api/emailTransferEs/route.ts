@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   <ul>
     <li><strong>Nombre Completo:</strong> ${fullName}</li>
     <li><strong>Traslado solicitado:</strong> ${transferInfo}</li>
-    <li><strong>Fecha de arrivo:</strong> ${fromDate}</li>
+    <li><strong>Fecha de arribo:</strong> ${fromDate}</li>
     <li><strong>Fecha de partida:</strong> ${toDate}</li>
     <li><strong>Numero de vuelo:</strong> ${flightNumber}</li>
     <li><strong>Teléfono de contacto:</strong> ${phone}</li>
@@ -29,6 +29,7 @@ export async function POST(request: NextRequest) {
     
     <li><strong>Notas adicionales:</strong> ${text}</li>
   </ul>
+  Estimado/a. Hemos recibido tu mensaje. En breve un agente de ventas estará en contacto con usted.
 `;
 
   const transport = nodemailer.createTransport({
@@ -51,10 +52,10 @@ export async function POST(request: NextRequest) {
   });
 
   const mailOptions: Mail.Options = {
-    from: 'Contacto', //process.env.MY_EMAIL,
+    from: emailContact, //process.env.MY_EMAIL,
     to: 'receptivos@grupoelis.com.uy',
     cc: emailContact,
-    subject: `Mensaje de ${fullName} - Se solicita un traslado`,
+    subject: `[SUMMIT ENERGY] - Mensaje de ${fullName} - Se solicita un traslado`,
     //text: message,
     html: htmlMessage,
     replyTo: emailContact,

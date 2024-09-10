@@ -12,6 +12,8 @@ export async function POST(request: NextRequest) {
     transferInfo,
     flightNumber,
     phone,
+    payment,
+    country,
   } = await request.json();
   const htmlMessage = `
   <h2>Transfer Request Details</h2>
@@ -23,8 +25,11 @@ export async function POST(request: NextRequest) {
     <li><strong>Flight Number:</strong> ${flightNumber}</li>
     <li><strong>Phone:</strong> ${phone}</li>
     <li><strong>Email:</strong> ${emailContact}</li>
+    <li><strong>Payment:</strong> ${payment}</li>
+    <li><strong>Country:</strong> ${country}</li>
     <li><strong>Additional Notes:</strong> ${text}</li>
   </ul>
+  Dear Sir/Madam, We have received your message. A sales agent will be in touch with you shortly.
 `;
 
   const transport = nodemailer.createTransport({
@@ -50,7 +55,7 @@ export async function POST(request: NextRequest) {
     from: 'Contacto', //process.env.MY_EMAIL,
     to: 'receptivos@grupoelis.com.uy',
     cc: emailContact,
-    subject: `Message from ${fullName} - Transfer Contact`,
+    subject: `[SUMMIT ENERGY] -  Message from ${fullName} - Transfer Contact`,
     //text: message,
     html: htmlMessage,
     replyTo: emailContact,
@@ -71,7 +76,7 @@ export async function POST(request: NextRequest) {
     await sendMailPromise();
     return NextResponse.json({
       message:
-        'Email sent. One of our sales representatives will contact you shortly. Please remember tht the cost is per person',
+        'Email sent. One of our sales representatives will contact you shortly. Please remember that the cost is per person',
     });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });

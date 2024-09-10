@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
     hotel,
     phone,
     metodPago,
+    country,
   } = await request.json();
   const htmlMessage = `
   <h2>Acomodation Request Details</h2>
@@ -22,9 +23,11 @@ export async function POST(request: NextRequest) {
     <li><strong>Departure Date:</strong> ${toDate}</li>
     <li><strong>Phone:</strong> ${phone}</li>
     <li><strong>Email:</strong> ${emailContact}</li>
-    <li><strong>Abonará con :</strong> ${metodPago}</li>
+    <li><strong>Payment con :</strong> ${metodPago}</li>
+     <li><strong>Country con :</strong> ${country}</li>
     <li><strong>Additional Notes:</strong> ${text}</li>
   </ul>
+  Dear Sir/Madam, We have received your message. A sales agent will be in touch with you shortly.
 `;
 
   const transport = nodemailer.createTransport({
@@ -50,7 +53,7 @@ export async function POST(request: NextRequest) {
     from: 'Contacto', //process.env.MY_EMAIL,
     to: 'receptivos@grupoelis.com.uy',
     cc: emailContact,
-    subject: `Message from ${fullName} - Hotel Reservation Contact`,
+    subject: `[SUMMIT ENERGY] - Message from ${fullName} - Hotel Reservation Contact`,
     //text: message,
     html: htmlMessage,
     replyTo: emailContact,

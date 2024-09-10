@@ -14,6 +14,7 @@ export type FormDataHotelEs = {
   toDate: string;
   text: string;
   metodoPago: string;
+  pais: string;
 };
 
 const HotelFormEn: FC = () => {
@@ -138,6 +139,20 @@ const HotelFormEn: FC = () => {
             type='date'
             className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
             {...register('toDate', { required: true })}
+          />
+        </div>
+        <div className='mb-5'>
+          <label
+            htmlFor='pais'
+            className='text-left mb-2 block text-base font-large text-red-900'
+          >
+            País
+          </label>
+          <p className='text-xs text-left'>Escriba su país de residencia</p>
+          <input
+            type='text'
+            className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
+            {...register('pais', { required: true })}
           />
         </div>
         <div className='mb-5'>

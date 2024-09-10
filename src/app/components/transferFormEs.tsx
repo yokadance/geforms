@@ -16,6 +16,7 @@ export type FormDataTransferEs = {
   flightNumber: string;
   text: string;
   metodoPago: string;
+  pais: string;
 };
 
 const TransferContactEs: FC = () => {
@@ -140,6 +141,21 @@ const TransferContactEs: FC = () => {
               placeholder='Número de vuelo'
               className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-red-950 outline-none focus:border-red-700 focus:shadow-md'
               {...register('flightNumber', { required: false })}
+            />
+          </div>
+          <div className='mb-5'>
+            <label
+              htmlFor='flightNumber'
+              className='text-left mb-2 block text-base font-large text-red-950'
+            >
+              País
+              <p className='text-xs'>Escriba su país de residencia</p>
+            </label>
+            <input
+              type='text'
+              placeholder='País'
+              className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-red-950 outline-none focus:border-red-700 focus:shadow-md'
+              {...register('pais', { required: false })}
             />
           </div>
           <div className='mb-5'>

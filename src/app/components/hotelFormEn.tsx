@@ -13,7 +13,8 @@ export type FormDataHotel = {
   fromDate: string;
   toDate: string;
   text: string;
-  metodoPago: string;
+  payment: string;
+  country: string;
 };
 
 const HotelFormEn: FC = () => {
@@ -87,10 +88,10 @@ const HotelFormEn: FC = () => {
             {...register('hotel', { required: true })}
           >
             <option value=''>Select your accommodation</option>
-            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE US$185'>
               ENJOY HOTEL SUPERIOR ROOM SINGLE US$185
             </option>
-            <option value='ENJOY HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
+            <option value='ENJOY HOTEL SUPERIOR ROOM DOUBLE US$185'>
               ENJOY HOTEL SUPERIOR ROOM DOUBLE US$185
             </option>
             <option value='SOLERIOS HOTEL SUPERIOR ROOM SINGLE/DOUBLE US$125'>
@@ -139,7 +140,37 @@ const HotelFormEn: FC = () => {
             {...register('toDate', { required: true })}
           />
         </div>
+        <div className='mb-5'>
+          <label
+            htmlFor='country'
+            className='text-left mb-2 block text-base font-large text-red-900'
+          >
+            Country
+          </label>
+          <input
+            type='text'
+            className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
+            {...register('country', { required: true })}
+          />
+        </div>
 
+        <div className='mb-5'>
+          <label
+            htmlFor='payment'
+            className='mb-2 text-left block text-base font-large text-red-900'
+          >
+            Select payment method
+          </label>
+          <select
+            className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
+            {...register('payment', { required: true })}
+          >
+            <option value=''>Select Payment Method</option>
+            <option value='Credit Card'>Credit Card</option>
+            <option value='Bank Transfer'>Bank Transfer</option>
+            <option value='PayPal'>PayPal</option>
+          </select>
+        </div>
         <div className='mb-5'>
           <label
             htmlFor='text'

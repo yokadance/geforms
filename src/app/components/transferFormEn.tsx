@@ -14,6 +14,8 @@ export type FormDataTransferEn = {
   toDate: string;
   flightNumber: string;
   text: string;
+  payment: string;
+  country: string;
 };
 
 const TransferContactEn: FC = () => {
@@ -138,6 +140,38 @@ const TransferContactEn: FC = () => {
               className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-red-950 outline-none focus:border-red-700 focus:shadow-md'
               {...register('flightNumber', { required: false })}
             />
+          </div>
+          <div className='mb-5'>
+            <label
+              htmlFor='Country'
+              className='text-left mb-2 block text-base font-large text-red-950'
+            >
+              Country
+              <p className='text-xs'>Please wirte your country</p>
+            </label>
+            <input
+              type='text'
+              placeholder='Country'
+              className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-red-950 outline-none focus:border-red-700 focus:shadow-md'
+              {...register('country', { required: false })}
+            />
+          </div>
+          <div className='mb-5'>
+            <label
+              htmlFor='payment'
+              className='mb-2 text-left block text-base font-large text-red-900'
+            >
+              Select payment method
+            </label>
+            <select
+              className='w-full rounded-md border border-gray-300 bg-white py-3 px-4 text-base font-large text-gray-700 outline-none focus:border-red-700 focus:shadow-md'
+              {...register('payment', { required: true })}
+            >
+              <option value=''>Select Payment Method</option>
+              <option value='Credit Card'>Credit Card</option>
+              <option value='Bank Transfer'>Bank Transfer</option>
+              <option value='PayPal'>PayPal</option>
+            </select>
           </div>
           <div className='mb-5'>
             <label
